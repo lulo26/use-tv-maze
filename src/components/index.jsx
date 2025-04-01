@@ -9,7 +9,7 @@ export const NavbarApp = ()=>{
     return (
         <>
         
-        <Navbar className="bg-body-tertiary justify-content-md-center" data-bs-theme="dark">
+        <Navbar className="bg-body-tertiary justify-content-md-center rounded-edge" data-bs-theme="dark">
       <Form inline>
         <Row>
           <Col xs="auto">

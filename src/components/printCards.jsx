@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 export const PrintCard = ()=>{
     const [pcards, setPcards] = useState([])
     useEffect(()=>{
-        axios.get('https://api.tvmaze.com/search/shows')
+        axios.get('http://api.tvmaze.com/shows')
         .then((response)=>{
             setPcards(response.data)
         })
@@ -14,14 +14,15 @@ export const PrintCard = ()=>{
     return(
         <>
          {pcards.map((pcard) =>{
+            console.log(pcard);
+            
             return(
             <Card style={{ width: '18rem' }} className='mt-3'>
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{pcard.name}</Card.Title>
                 <Card.Text>
-                 Some quick example text to build on the card title and make up the
-                 bulk of the card's content.
+                 {pcard.summary}
                  </Card.Text>
                 </Card.Body>
              </Card>
